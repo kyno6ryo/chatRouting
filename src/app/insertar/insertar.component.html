@@ -1,0 +1,32 @@
+<div class="container">
+    <h1>Agregar nueva entrada</h1>
+    <div class="row">
+      <div class="col-md-6">
+        <form (ngSubmit)="saveBlog()" #blogForm="ngForm">
+          <div class="form-group">
+            <label for="name">Titulo</label>
+            <input type="text" class="form-control" [(ngModel)]="blog.titulo" name="titulo" required>
+          </div>
+          
+          <div class="form-group">
+              <label for="name">Autor</label>
+              <input type="text" class="form-control" [(ngModel)]="blog.autor" name="autor" required>
+          </div>
+
+          <div class="form-group">
+            <label for="name">Descripción</label>
+            <input type="textarea" rows="100" cols="40" class="form-control" [(ngModel)]="blog.descripcion" name="descripcion" required>
+          </div>
+         
+          <div class="form-group">
+              <label for="name">Fecha</label>
+              <input type="date" class="form-control" [(ngModel)]="blog.fecha" name="fecha" required>
+          </div>
+
+          <div class="form-group">
+            <button type="submit" class="btn btn-success" [disabled]="!blogForm.form.valid">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

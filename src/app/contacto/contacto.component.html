@@ -1,0 +1,27 @@
+<div class="container">
+    <h1>Agregar nuevo contacto</h1>
+    <div class="row">
+      <div class="col-md-6">
+        <form (ngSubmit)="saveContacto()" #contactoForm="ngForm">
+          <div class="form-group">
+            <label for="name">E-mail</label>
+            <input type="text" class="form-control" [(ngModel)]="contacto.mail" name="mail" required>
+          </div>
+          
+          <div class="form-group">
+              <label for="name">Pregunta</label>
+              <textarea class="form-control" [(ngModel)]="contacto.pregunta" name="pregunta" required></textarea>
+          </div>
+
+          <div class="form-group">
+              <label for="name">Calendario</label>
+              <input type="date" class="form-control" [(ngModel)]="contacto.calendario" name="calendario" required>
+          </div>
+
+          <div class="form-group">
+            <button type="submit" class="btn btn-success" [disabled]="!contactoForm.form.valid">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
